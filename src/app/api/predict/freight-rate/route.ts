@@ -75,17 +75,35 @@ export async function POST(request: NextRequest) {
     const month = new Date().getMonth();
     const seasonIdx = [9, 10, 11, 0, 2, 3].includes(month) ? 1 : 0; // Oct-Dec, Jan, Mar-Apr are peak
 
-    // ─── ML Prediction (trained regression model) ──────────────────────────
-    const predictedRate = Math.round(
-      WEIGHTS.intercept
-      + WEIGHTS.distance * distance
-      + WEIGHTS.distanceSq * distance * distance
-      + WEIGHTS.truckLoad * truck.loadFactor
-      + WEIGHTS.fuelEffect * (fuelPrice - 90)
-      + WEIGHTS.demandEffect * (demandIndex - 0.5)
-      + WEIGHTS.seasonEffect * seasonIdx
-      + WEIGHTS.tollEstimate * distance
-    );
+    // ─── Try Python sklearn backend first, fall back to JS model ───────────
+    let predictedRate: number;
+    try {
+      const pyRes = await fetch('http://localhost:8000/predict/freight-rate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          distance_km: distance,
+          truck_type: Object.keys(TRUCK_CONFIGS).indexOf(truckType),
+          fuel_price: fuelPrice,
+          demand_index: demandIndex,
+        }),
+        signal: AbortSignal.timeout(3000),
+      });
+      const pyData = await pyRes.json();
+      predictedRate = Math.round(pyData.predicted_rate);
+    } catch {
+      // Fallback: JS regression model
+      predictedRate = Math.round(
+        WEIGHTS.intercept
+        + WEIGHTS.distance * distance
+        + WEIGHTS.distanceSq * distance * distance
+        + WEIGHTS.truckLoad * truck.loadFactor
+        + WEIGHTS.fuelEffect * (fuelPrice - 90)
+        + WEIGHTS.demandEffect * (demandIndex - 0.5)
+        + WEIGHTS.seasonEffect * seasonIdx
+        + WEIGHTS.tollEstimate * distance
+      );
+    }
 
     // Generate market statistics around the prediction
     const seed = origin.length * 31 + destination.length * 17 + truckType.length * 7;

@@ -193,7 +193,7 @@ export default function ContactFooter() {
                 <a href="https://www.linkedin.com/company/logisticsnow/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" className="text-xs text-neutral-500 hover:text-white transition-colors">LinkedIn</a>
               </div>
             </div>
-            <p className="text-xs text-neutral-500">Developed by Harshini Y, Adhithya J, Abishek N, Arya A.</p>
+            <p className="text-xs text-neutral-500">Developed by Adhithya J, Harshini Y, Abishek N, Arya A</p>
           </div>
         </div>
       </footer>

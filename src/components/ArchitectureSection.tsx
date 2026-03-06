@@ -89,27 +89,6 @@ export default function ArchitectureSection() {
           ))}
         </div>
 
-        {/* Tech stack summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 max-w-3xl mx-auto card p-6"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            {[
-              { label: 'Frontend', tech: 'Next.js · React · Tailwind' },
-              { label: 'Backend', tech: 'FastAPI · Python · Node.js' },
-              { label: 'ML/AI', tech: 'scikit-learn · XGBoost · Gemini' },
-              { label: 'Infra', tech: 'Docker · Render · Vercel' },
-            ].map(s => (
-              <div key={s.label}>
-                <div className="text-xs text-neutral-400 uppercase tracking-wider mb-1">{s.label}</div>
-                <div className="text-xs font-medium text-deep-blue">{s.tech}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

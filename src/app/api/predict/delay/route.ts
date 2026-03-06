@@ -76,24 +76,48 @@ export async function POST(request: NextRequest) {
     const isRushHour = (hour >= 7 && hour <= 10) || (hour >= 17 && hour <= 20) ? 1 : 0;
     const isWeekend = [0, 6].includes(new Date().getDay()) ? 1 : 0;
 
-    // ─── Logistic regression prediction ────────────────────────────────────
-    const logit =
-      MODEL_COEFFICIENTS.intercept
-      + MODEL_COEFFICIENTS.distance * routeData.distance
-      + MODEL_COEFFICIENTS.weatherSeverity * weatherWeight
-      + MODEL_COEFFICIENTS.trafficSeverity * trafficWeight
-      + MODEL_COEFFICIENTS.congestionZones * routeData.congestionZones
-      + MODEL_COEFFICIENTS.baseDelay * routeData.baseDelay
-      + MODEL_COEFFICIENTS.timeOfDay * isRushHour
-      + MODEL_COEFFICIENTS.dayOfWeek * isWeekend;
+    // ─── Try Python sklearn backend first, fall back to JS model ───────────
+    const weatherIdx = ['Clear', 'Rain', 'Fog', 'Heavy Rain', 'Storm'].indexOf(weather);
+    const trafficIdx = ['Low', 'Moderate', 'High', 'Severe'].indexOf(traffic);
+    let riskScore: number;
+    let riskLevel: string;
+    let delayProbability: number;
 
-    const probability = sigmoid(logit);
-    const riskScore = Math.min(Math.round(probability * 100), 98);
+    try {
+      const pyRes = await fetch('http://localhost:8000/predict/delay', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          route_distance_km: routeData.distance,
+          weather: Math.max(weatherIdx, 0),
+          traffic: Math.max(trafficIdx, 0),
+          historical_delay_pct: routeData.baseDelay,
+        }),
+        signal: AbortSignal.timeout(3000),
+      });
+      const pyData = await pyRes.json();
+      riskScore = pyData.risk_score;
+      riskLevel = pyData.risk_level;
+      delayProbability = pyData.delay_probability;
+    } catch {
+      // Fallback: JS logistic regression
+      const logit =
+        MODEL_COEFFICIENTS.intercept
+        + MODEL_COEFFICIENTS.distance * routeData.distance
+        + MODEL_COEFFICIENTS.weatherSeverity * weatherWeight
+        + MODEL_COEFFICIENTS.trafficSeverity * trafficWeight
+        + MODEL_COEFFICIENTS.congestionZones * routeData.congestionZones
+        + MODEL_COEFFICIENTS.baseDelay * routeData.baseDelay
+        + MODEL_COEFFICIENTS.timeOfDay * isRushHour
+        + MODEL_COEFFICIENTS.dayOfWeek * isWeekend;
 
-    const riskLevel =
-      riskScore >= 75 ? 'Critical' :
-      riskScore >= 50 ? 'High' :
-      riskScore >= 30 ? 'Medium' : 'Low';
+      delayProbability = sigmoid(logit);
+      riskScore = Math.min(Math.round(delayProbability * 100), 98);
+      riskLevel =
+        riskScore >= 75 ? 'Critical' :
+        riskScore >= 50 ? 'High' :
+        riskScore >= 30 ? 'Medium' : 'Low';
+    }
 
     const estimatedDelay =
       riskScore >= 75 ? '4-8 hours' :
@@ -126,7 +150,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       risk_score: riskScore,
       risk_level: riskLevel,
-      delay_probability: Math.round(probability * 1000) / 1000,
+      delay_probability: Math.round(delayProbability * 1000) / 1000,
       estimated_delay: estimatedDelay,
       factors,
       recommendation: recommendations[riskLevel],
