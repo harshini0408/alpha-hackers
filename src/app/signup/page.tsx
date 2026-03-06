@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-const API = process.env.NEXT_PUBLIC_AUTH_API || 'http://localhost:5000/api';
+const API = process.env.NEXT_PUBLIC_AUTH_API || 'https://alpha-hackers-ikgr.onrender.com/api';
 
 export default function SignupPage() {
   const router = useRouter();
