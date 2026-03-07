@@ -8,7 +8,13 @@ const profileRoutes = require('./routes/profileRoutes');
 
 const app = express();
 
-app.use(cors({ origin: '*', credentials: true }));
+app.use(
+  cors({
+    origin: 'https://alpha-hackers-website-rebranding.onrender.com',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Routes
