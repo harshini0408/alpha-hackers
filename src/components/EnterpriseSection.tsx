@@ -87,7 +87,7 @@ export default function EnterpriseSection() {
             Built on data. Measured by impact.
           </h2>
           <p className="text-neutral-500 max-w-xl mx-auto">
-            LogisticsNow is building the AI infrastructure layer for India&apos;s $380B logistics market —
+            LogisticsNow is building the AI infrastructure layer for India&apos;s ₹31L Cr+ logistics market —
             with real predictions, real routes, and real enterprise traction.
           </p>
         </motion.div>
@@ -213,9 +213,9 @@ export default function EnterpriseSection() {
           <h3 className="text-lg font-semibold text-deep-blue mb-6">Market Opportunity</h3>
           <div className="space-y-4 max-w-xl">
             {[
-              { label: 'TAM — India Logistics', value: '$380B', width: '100%' },
-              { label: 'SAM — AI-addressable', value: '$42B', width: '45%' },
-              { label: 'SOM — Current target', value: '$4.2B', width: '15%' },
+              { label: 'TAM — India Logistics', value: '₹31L Cr+', width: '100%' },
+              { label: 'SAM — AI-addressable', value: '₹3.5L Cr', width: '45%' },
+              { label: 'SOM — Current target', value: '₹35,000 Cr', width: '15%' },
             ].map((bar) => (
               <div key={bar.label}>
                 <div className="flex justify-between text-sm mb-1">
@@ -243,7 +243,7 @@ export default function EnterpriseSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <a href="#contact" className="inline-flex items-center gap-2 bg-deep-blue text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-deep-blue/90 transition-colors">
+          <a href="/investors" className="inline-flex items-center gap-2 bg-deep-blue text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-deep-blue/90 transition-colors">
             Request Investor Deck
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
           </a>

@@ -41,7 +41,7 @@ const newsItems = [
     date: 'Oct 2024',
     category: 'Milestone',
     title: '80,000 Routes Mapped on LoRRI',
-    excerpt: 'LoRRI platform reached a landmark milestone — 80,000+ freight routes mapped across India and 3 continents, with ₹2.5 billion+ in logistics spend analysed.',
+    excerpt: 'LoRRI platform reached a landmark milestone — 80,000+ freight routes mapped across India and 3 continents, with ₹250 Cr+ in logistics spend analysed.',
     tag: 'Milestone',
   },
   {

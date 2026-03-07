@@ -45,7 +45,7 @@ export default function CareersSection() {
         <div className="text-center mb-16">
           <div className="badge mx-auto mb-4">Careers</div>
           <h2 className="section-title mb-4">Build the Future of Logistics AI</h2>
-          <p className="section-subtitle mx-auto">Join a team of engineers, data scientists, and logistics experts reshaping a $380B industry.</p>
+          <p className="section-subtitle mx-auto">Join a team of engineers, data scientists, and logistics experts reshaping a ₹31L Cr+ industry.</p>
         </div>
 
         {/* Values */}

@@ -38,10 +38,10 @@ const products = [
 ];
 
 const capabilities = [
-  { icon: '📊', title: 'Freight Benchmarking', desc: 'Compare your freight rates against market benchmarks from ₹2.5 billion+ of analysed spend data.' },
+  { icon: '📊', title: 'Freight Benchmarking', desc: 'Compare your freight rates against market benchmarks from ₹250 Cr+ of analysed spend data.' },
   { icon: '🛤️', title: 'Route Intelligence', desc: 'Optimize routes across 80,000+ mapped corridors with real-time cost, transit time, and reliability data.' },
   { icon: '🤖', title: 'AI Predictions', desc: 'Predict freight rate movements, demand surges, and delivery delays before they happen.' },
-  { icon: '📈', title: 'Spend Analytics', desc: 'Visualize and decompose your logistics spend to identify savings opportunities worth millions.' },
+  { icon: '📈', title: 'Spend Analytics', desc: 'Visualize and decompose your logistics spend to identify savings opportunities worth crores.' },
   { icon: '🚛', title: 'Carrier Management', desc: 'Score, compare, and manage your carrier portfolio with data-driven performance insights.' },
   { icon: '⚡', title: 'Real-Time Alerts', desc: 'Get notified of rate anomalies, capacity crunches, and market shifts as they happen.' },
 ];
@@ -144,7 +144,7 @@ export default function ProductsPage() {
         <div className="max-w-content mx-auto px-5 md:px-8 text-center">
           <h2 className="section-title mb-4">Ready to Transform Your Logistics?</h2>
           <p className="section-subtitle mb-8">
-            Join the enterprises using LoRRI to save millions and gain competitive advantage
+            Join the enterprises using LoRRI to save crores and gain competitive advantage
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

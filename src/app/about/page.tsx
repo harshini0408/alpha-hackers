@@ -19,7 +19,7 @@ const timeline = [
 
 const values = [
   { icon: '🔒', title: 'Trusted & Neutral', desc: 'We are the trusted, neutral platform for logistics. We earn your trust and keep it — serving both shippers and carriers without bias.' },
-  { icon: '🌐', title: 'Global Reach', desc: 'Multi-billion dollar spend data spanning 3 continents. Our analytics deliver multi-million savings while improving service levels.' },
+  { icon: '🌐', title: 'Global Reach', desc: '₹250 Cr+ spend data spanning 3 continents. Our analytics deliver multi-crore savings while improving service levels.' },
   { icon: '🤖', title: 'AI-First', desc: 'We build with AI at the core — not as an add-on. Every feature is designed to learn, adapt, and optimize automatically.' },
   { icon: '🏗️', title: 'Industry-Built', desc: 'For the industry, of the industry, and by the industry. Deep domain expertise combined with cutting-edge technology.' },
 ];

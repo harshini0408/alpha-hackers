@@ -9,14 +9,14 @@ export const metadata: Metadata = {
 };
 
 const marketStats = [
-  { value: '$200B+', label: 'India Logistics Market', detail: 'One of the largest and fastest-growing logistics markets globally' },
+  { value: '₹16L Cr+', label: 'India Logistics Market', detail: 'One of the largest and fastest-growing logistics markets globally' },
   { value: '14%', label: 'GDP Share', detail: 'Logistics cost as % of GDP in India — double that of developed nations' },
   { value: '6%', label: 'Digitised', detail: 'Only ~6% of India\'s logistics industry is digitised — massive opportunity' },
   { value: '18%+', label: 'CAGR', detail: 'Projected growth rate of logistics-tech sector through 2030' },
 ];
 
 const highlights = [
-  { title: 'AI-Native Platform', desc: 'Built with AI at the core — not bolted on. Our models learn from ₹2.5 billion+ of logistics spend data to deliver actionable intelligence.', icon: '🤖' },
+  { title: 'AI-Native Platform', desc: 'Built with AI at the core — not bolted on. Our models learn from ₹250 Cr+ of logistics spend data to deliver actionable intelligence.', icon: '🤖' },
   { title: 'Network Effects', desc: 'Every shipper and carrier added strengthens our data moat. 80,000+ routes and 2,200+ carriers create compounding value.', icon: '🔗' },
   { title: 'Revenue Model', desc: 'SaaS subscriptions + transaction-based revenue from freight benchmarking and optimization. High margins, recurring revenue.', icon: '💰' },
   { title: 'Trusted & Neutral', desc: 'We operate as a trusted, neutral platform — a position that is hard to replicate and creates deep switching costs.', icon: '🔒' },

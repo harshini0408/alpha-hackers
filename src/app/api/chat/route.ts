@@ -13,7 +13,7 @@ const LOGISTICSNOW_CONTEXT = `You are the LogisticsNow AI Assistant, an expert i
 Company Context:
 - LogisticsNow (logisticsnow.in) builds the Digital Backbone of Logistics using AI and Data Science
 - Core product: LoRRI (Logistics Rate & Route Intelligence) — available at lorri.in (shippers) and transporter.lorri.in (carriers)
-- 80,000+ routes mapped, 2,200+ carriers, ₹2.5 billion+ logistics spend analysed across 3 continents
+- 80,000+ routes mapped, 2,200+ carriers, ₹250 Cr+ logistics spend analysed across 3 continents
 - Vision: Building the National Logistics Intelligence Grid
 - Services: Freight Benchmarking, Route Intelligence, AI-powered Delay Prediction, Logistics Maturity Assessment
 - Contact: connect@logisticsnow.in | +91-9867773508 | Mumbai, India
@@ -112,7 +112,7 @@ async function getMLResponse(message: string, baseUrl: string): Promise<string> 
     return `**LogisticsNow** is building the Digital Backbone of Logistics.\n\n` +
       `We use AI and Data Science to organise the logistics industry — optimizing operations, time, and revenue. ` +
       `As the **trusted, neutral platform**, we serve both shippers and carriers without bias.\n\n` +
-      `**Key Numbers:**\n• 80,000+ routes mapped\n• 2,200+ carriers\n• ₹2.5 billion+ spend analysed\n• 3 continents covered\n\n` +
+      `**Key Numbers:**\n• 80,000+ routes mapped\n• 2,200+ carriers\n• ₹250 Cr+ spend analysed\n• 3 continents covered\n\n` +
       `Our core product **LoRRI** (Logistics Rate & Route Intelligence) is available at [lorri.in](https://lorri.in) for shippers and [transporter.lorri.in](https://transporter.lorri.in) for carriers.`;
   }
 
