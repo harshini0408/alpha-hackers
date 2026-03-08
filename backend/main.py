@@ -66,6 +66,10 @@ class MaturityResponse(BaseModel):
 
 # ─── Endpoints ─────────────────────────────────────────────────────────────────
 
+@app.get("/")
+def read_root():
+    return {"status": "success", "message": "Backend is running!"}
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
