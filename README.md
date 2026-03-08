@@ -4,7 +4,7 @@
 
 LogisticsNow is an AI-native logistics intelligence platform built for the Indian freight and supply chain industry. It leverages machine learning models, real-time data ingestion, and predictive analytics to help shippers, carriers, and enterprises make smarter logistics decisions.
 
-🌐 **Live:** [https://alpha-hackers.vercel.app/) &nbsp;|&nbsp; 
+🌐 **Live:** [https://alpha-hackers.vercel.app/) &nbsp;
 
 ---
 
