@@ -5,12 +5,12 @@ Presentation Deck : **https://docs.google.com/document/d/1EVDrwjegX6Zfc295PtlIuO
 
 🌐 **Live:** [https://alpha-hackers.vercel.app/) &nbsp;
 
-System Architecture
+#System Architecture
 
 
 ![System Architecture](images/System_Architecture.jpeg)
 
-Work Flow
+#Work Flow
 
 ![Work Flow](images/WorkFlow.jpeg)
 ---
