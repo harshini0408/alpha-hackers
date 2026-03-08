@@ -286,7 +286,7 @@ The auth API runs at **https://alpha-hackers-33g1.onrender.com**.
 
 ## API Reference
 
-### AI/ML Backend — FastAPI (port 8000)
+### AI/ML Backend — FastAPI
 
 #### `POST /predict/freight-rate`
 
@@ -349,7 +349,7 @@ Score logistics maturity and get improvement suggestions.
 }
 ```
 
-### Auth Backend — Express (port 5000)
+### Auth Backend — Express
 
 | Method | Endpoint | Auth | Description |
 |---|---|---|---|
@@ -359,7 +359,7 @@ Score logistics maturity and get improvement suggestions.
 | `GET` | `/api/profile/:userId` | JWT | Get transporter profile |
 | `PUT` | `/api/profile/update` | JWT | Update own profile |
 
-### Next.js API Routes (port 3000)
+### Next.js API Routes
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -375,26 +375,11 @@ Score logistics maturity and get improvement suggestions.
 
 The application is deployed on **Render**:
 
-- **Frontend:** Deployed as a Next.js web service
-- **AI/ML Backend:** Deployed as a Python web service (FastAPI + Uvicorn)
-- **Auth Backend:** Deployed as a Node.js web service
+- **Frontend:** https://alpha-hackers.vercel.app/
+- **AI/ML Backend:** https://alpha-hackers-1-4hsj.onrender.com/health
+- **Auth Backend:** https://alpha-hackers-33g1.onrender.com
 
-### Build Commands
 
-```bash
-# Frontend
-npm run build
-
-# AI/ML Backend
-pip install -r requirements.txt
-uvicorn main:app --host 0.0.0.0 --port $PORT
-
-# Auth Backend
-npm install
-npm start
-```
-
----
 
 ## Key Metrics
 
@@ -419,20 +404,4 @@ npm start
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
----
 
-## License
-
-This project is proprietary software. All rights reserved.
-
----
-
-<p align="center">
-  <strong>LogisticsNow</strong> — Building the Digital Backbone of Logistics 🇮🇳
-</p>
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
