@@ -1,8 +1,7 @@
-# LogisticsNow — AI-Powered National Logistics Intelligence Platform
+# Team Aplha Hackers
 
-> **Building the Digital Backbone of Logistics** with LoRRI (Logistics Rate & Route Intelligence)
+Presentation Deck : **https://docs.google.com/document/d/1EVDrwjegX6Zfc295PtlIuOxEcFZwq-slpkXxUZ0Zyv4/edit?usp=sharing**
 
-LogisticsNow is an AI-native logistics intelligence platform built for the Indian freight and supply chain industry. It leverages machine learning models, real-time data ingestion, and predictive analytics to help shippers, carriers, and enterprises make smarter logistics decisions.
 
 🌐 **Live:** [https://alpha-hackers.vercel.app/) &nbsp;
 
