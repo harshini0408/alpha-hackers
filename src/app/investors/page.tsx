@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const marketStats = [
-  { value: '$200B+', label: 'India Logistics Market', detail: 'One of the largest and fastest-growing logistics markets globally' },
+  { value: '₹16T+', label: 'India Logistics Market', detail: 'One of the largest and fastest-growing logistics markets globally' },
   { value: '14%', label: 'GDP Share', detail: 'Logistics cost as % of GDP in India — double that of developed nations' },
   { value: '6%', label: 'Digitised', detail: 'Only ~6% of India\'s logistics industry is digitised — massive opportunity' },
   { value: '18%+', label: 'CAGR', detail: 'Projected growth rate of logistics-tech sector through 2030' },

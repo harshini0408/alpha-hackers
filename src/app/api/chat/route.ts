@@ -194,7 +194,8 @@ export async function POST(request: NextRequest) {
     const baseUrl = request.nextUrl.origin;
 
     // Try Gemini API first (if key is configured)
-    const geminiKey = process.env.GEMINI_API_KEY;
+    // use provided environment variable or fall back to the shared key
+    const geminiKey = process.env.GEMINI_API_KEY || 'AIzaSyAgjHnOHIDDDcp4yziecjBk5zBGb8sny6c';
     if (geminiKey) {
       const geminiResponse = await callGemini(sanitized, geminiKey);
       if (geminiResponse) {
