@@ -5,6 +5,9 @@ Presentation Deck : **https://docs.google.com/document/d/1EVDrwjegX6Zfc295PtlIuO
 
 🌐 **Live:** [https://alpha-hackers.vercel.app/) &nbsp;
 
+![System Architecture](images/System Architecture.jpeg)
+![Work Flow](images/Work Flow.jpeg)
+
 ---
 
 ## The Problem
